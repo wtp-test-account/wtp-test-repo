@@ -1,7 +1,7 @@
 # settings.py
 
-WIDTH = 400
-HEIGHT = 300
+WIDTH = 800
+HEIGHT = 600
 FPS = 60
 
 PADDLE_SPEED = 8
