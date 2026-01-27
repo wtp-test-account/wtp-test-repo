@@ -1,6 +1,6 @@
 # settings.py
 
-WIDTH = 800
+WIDTH = 600
 HEIGHT = 300
 FPS = 60
 
