@@ -1,4 +1,5 @@
 # main.py
+from runner import is_async as is_async_xwtd
 from runner import is_async
 import pygame
 from settings import *
@@ -25,6 +26,28 @@ def main():
 
     pygame.quit()
 
+async def async_eywp_main():
+    (await is_async_xwtd(pygame.init))
+    screen = (await is_async_xwtd(pygame.display.set_mode, (WIDTH, HEIGHT)))
+    (await is_async_xwtd(pygame.display.set_caption, "Pong"))
+    clock = (await is_async_xwtd(pygame.time.Clock))
+
+    game = (await is_async_xwtd(Game, screen))
+
+    running = True
+    while running:
+        for event in (await is_async_xwtd(pygame.event.get)):
+            if event.type == pygame.QUIT:
+                running = False
+
+        (await is_async_xwtd(game.update))
+        (await is_async_xwtd(game.draw))
+
+        (await is_async_xwtd(clock.tick, FPS))
+
+    (await is_async_xwtd(pygame.quit))
+main.__async_version__ = async_eywp_main
+
 async def async_fnjw_main():
     (await is_async(pygame.init))
     screen = (await is_async(pygame.display.set_mode, (WIDTH, HEIGHT)))
@@ -45,7 +68,29 @@ async def async_fnjw_main():
         (await is_async(clock.tick, FPS))
 
     (await is_async(pygame.quit))
+
+async def async_eywp_async_fnjw_main():
+    (await is_async_xwtd(is_async, pygame.init))
+    screen = (await is_async_xwtd(is_async, pygame.display.set_mode, (WIDTH, HEIGHT)))
+    (await is_async_xwtd(is_async, pygame.display.set_caption, "Pong"))
+    clock = (await is_async_xwtd(is_async, pygame.time.Clock))
+
+    game = (await is_async_xwtd(is_async, Game, screen))
+
+    running = True
+    while running:
+        for event in (await is_async_xwtd(is_async, pygame.event.get)):
+            if event.type == pygame.QUIT:
+                running = False
+
+        (await is_async_xwtd(is_async, game.update))
+        (await is_async_xwtd(is_async, game.draw))
+
+        (await is_async_xwtd(is_async, clock.tick, FPS))
+
+    (await is_async_xwtd(is_async, pygame.quit))
+async_fnjw_main.__async_version__ = async_eywp_async_fnjw_main
 main.__async_version__ = async_fnjw_main
 
 if __name__ == "__main__":
-    (await is_async(main))
+    (await is_async_xwtd(is_async, main))
