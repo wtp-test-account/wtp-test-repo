@@ -1,1 +1,1 @@
-# Pong game in multiple files using PyGame
+# Pong_gg game in multiple files using PyGame
