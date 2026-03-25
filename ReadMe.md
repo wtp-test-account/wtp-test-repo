@@ -1,1 +1,1 @@
-# Pong game 3.0
+# Pong game
